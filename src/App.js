@@ -1,13 +1,15 @@
 import './App.css'
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import SynthCards from './containers/SynthCards'
+import { favorite } from './redux/actionCreators'
 
 class App extends Component {
 
   componentDidMount() {
-    console.log('next step: fetch synths')
+    console.log(this.props)
   }
-  
+
   render () {
     return (
       <>
@@ -18,4 +20,8 @@ class App extends Component {
   }
 }
 
-export default App
+const mapDispatchToProps = dispatch => ({
+  favorite: dispatch({favorite})
+})
+
+export default connect(null, mapDispatchToProps)(App)
