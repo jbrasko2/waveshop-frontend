@@ -2,12 +2,12 @@ import './App.css'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SynthCards from './containers/SynthCards'
-import { favorite } from './redux/actionCreators'
+import { getSynths } from './redux/actionCreators'
 
 class App extends Component {
 
   componentDidMount() {
-    console.log(this.props)
+    this.props.getSynths()
   }
 
   render () {
@@ -21,4 +21,4 @@ class App extends Component {
 }
 
 
-export default connect(null, { favorite })(App)
+export default connect(null, { getSynths })(App)

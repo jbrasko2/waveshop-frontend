@@ -1,4 +1,4 @@
-const API = "http://localhost:3000"
+const API = "http://localhost:7000"
 
 export const favorite = () => ({type: "ADD_FAVORITE"})
 
