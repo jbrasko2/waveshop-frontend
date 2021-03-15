@@ -20,8 +20,5 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  favorite: dispatch({favorite})
-})
 
-export default connect(null, mapDispatchToProps)(App)
+export default connect(null, { favorite })(App)
