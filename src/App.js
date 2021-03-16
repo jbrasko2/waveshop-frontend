@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SynthCards from './containers/SynthCards'
 import { getSynths } from './redux/actionCreators'
+import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
 
@@ -14,7 +15,10 @@ class App extends Component {
     return (
       <>
         <h1>WaveShop</h1>
-        <SynthCards />
+        <Switch>
+          <Route path="/synths/:id" component={SynthPage} />
+          <Route path="/synths" component={SynthCards} />
+        </Switch>
       </>
     )
   }

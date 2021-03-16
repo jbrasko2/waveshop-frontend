@@ -7,3 +7,7 @@
   height: auto;
   width: 400px;
  }
+
+ .card {
+   border-style: solid;
+ }
