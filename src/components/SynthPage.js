@@ -15,19 +15,27 @@ class SynthPage extends Component {
         this.props.unsetSynth()
     }
 
-    render () {
+    renderPage = () => {
         const { name, image, price, shortDesc, longDesc, stock, history } = this.props
         return (
             <div className="show">
-                <h3>{name}</h3>
-                <p>{shortDesc}</p>
-                <img src={image} alt={name} />
-                <p>${price}</p>
-                <p>In-Stock: {stock}</p>
-                <br/>
-                <p>{longDesc}</p>
-                <button onClick={history.goBack}>Go Back</button>
+            <h3>{name}</h3>
+            <p>{shortDesc}</p>
+            <img src={image} alt={name} />
+            <p>${price}</p>
+            <p>In-Stock: {stock}</p>
+            <br/>
+            <p>{longDesc}</p>
+            <button onClick={history.goBack}>Back</button>
             </div>
+        )
+    }
+
+    renderSpinner = () => <div className="loader"></div>
+
+    render () {
+        return (
+            this.props.id ? this.renderPage() : this.renderSpinner()
         )
     }
 }
