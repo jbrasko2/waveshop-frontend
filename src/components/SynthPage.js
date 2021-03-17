@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setSelectedSynth } from '../redux/actionCreators'
+import { setSelectedSynth, unsetSynth } from '../redux/actionCreators'
 
 class SynthPage extends Component {
 
@@ -9,6 +9,10 @@ class SynthPage extends Component {
         //we give this.props.match.params a key of id when we define '/synths/:id' in our Route path in App.js
         const id = this.props.match.params.id
         this.props.setSelectedSynth(id)
+    }
+
+    componentWillUnmount() {
+        this.props.unsetSynth()
     }
 
     render () {
@@ -32,4 +36,4 @@ const mapStateToProps = state => ({
     ...state.synths.selectedSynth
 })
 
-export default connect(mapStateToProps, { setSelectedSynth })(SynthPage)
+export default connect(mapStateToProps, { setSelectedSynth, unsetSynth })(SynthPage)

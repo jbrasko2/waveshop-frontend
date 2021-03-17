@@ -24,3 +24,5 @@ export const setSelectedSynth = id => {
         }))
     }
 }
+
+export const unsetSynth = () => ({type: "UNSET_SYNTH"})
