@@ -2,6 +2,7 @@ import './App.css'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SynthCards from './containers/SynthCards'
+import SynthPage from './components/SynthPage'
 import { getSynths } from './redux/actionCreators'
 import { Switch, Route } from 'react-router-dom'
 

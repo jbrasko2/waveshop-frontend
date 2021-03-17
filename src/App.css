@@ -11,3 +11,8 @@
  .card {
    border-style: solid;
  }
+
+ .show img {
+  height: auto;
+  width: 600px;
+ }

@@ -13,3 +13,14 @@ export const getSynths = () => {
         }))
     }
 }
+
+export const setSelectedSynth = id => {
+    return dispatch => {
+        fetch(API + "/synths/" + id)
+        .then(res => res.json())
+        .then(synthData => dispatch({
+            type: "SET_SELECTED_SYNTH",
+            payload: synthData
+        }))
+    }
+}
