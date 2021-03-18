@@ -8,8 +8,8 @@ const Login = props => {
         <div className="loginForm">
             <h2>{signup ? "Sign Up" : "Login"}</h2>
             <form>
-                <label htmlFor="userEmail">Email: </label>
-                <input type="text" id="userEmail" /><br/>
+                <label htmlFor="username">Username: </label>
+                <input type="text" id="username" /><br/>
                 <label htmlFor="userPassword">Password: </label>
                 <input type="password" id="userPassword" /><br/>
                 {signup && 
