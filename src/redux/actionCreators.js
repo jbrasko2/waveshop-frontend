@@ -117,3 +117,10 @@ export const submitReview = reviewData => {
         }))
     }
 }
+
+export const logout = () => {
+    return dispatch => {
+        localStorage.clear("token")
+        dispatch({type: "LOGOUT"})
+    }
+}

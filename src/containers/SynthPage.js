@@ -33,7 +33,7 @@ class SynthPage extends Component {
                 </div>
                 <div className="reviews">
                 {/* need to wrap reviewForm to check if user is logged*/}
-                <ReviewForm synth_id={id} />
+                    <ReviewForm synth_id={id} />
                     {reviews.map(review => <ReviewCard key={review.id} {...review} />)}
                 </div>
             </>

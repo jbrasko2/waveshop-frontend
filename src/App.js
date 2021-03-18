@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import SynthCards from './containers/SynthCards'
 import SynthPage from './containers/SynthPage'
 import Login from './components/Login'
-import { getSynths, autoLogin } from './redux/actionCreators'
+import { getSynths, autoLogin, logout } from './redux/actionCreators'
 import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
@@ -19,10 +19,13 @@ class App extends Component {
       <>
         <h1>WaveShop</h1>
         {this.props.user.id ?
-        <Switch>
-          <Route path="/synths/:id" component={SynthPage} />
-          <Route path="/synths" component={SynthCards} />
-        </Switch>
+        <>
+          <button onClick={this.props.logout}>Logout</button>
+          <Switch>
+            <Route path="/synths/:id" component={SynthPage} />
+            <Route path="/synths" component={SynthCards} />
+          </Switch>
+        </>
         :
         <Login />
         }
@@ -33,4 +36,4 @@ class App extends Component {
 
 const mapStateToProps = state => ({user: state.user})
 
-export default connect(mapStateToProps, { getSynths, autoLogin })(App)
+export default connect(mapStateToProps, { getSynths, autoLogin, logout })(App)
