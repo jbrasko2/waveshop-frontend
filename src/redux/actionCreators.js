@@ -1,7 +1,5 @@
 const API = "http://localhost:7000"
 
-export const favorite = () => ({type: "ADD_FAVORITE"})
-
 // thunk allows us to return a function that takes in the argument of dispatch, instead of plain object representing the action
 export const getSynths = () => {
     return dispatch => {
@@ -28,3 +26,13 @@ export const setSelectedSynth = id => {
 export const unsetSynth = () => ({type: "UNSET_SYNTH"})
 
 export const toggleSignup = () => ({type: "TOGGLE_SIGNUP"})
+
+export const handleLoginFormChange = event => ({
+    type: "LOGIN_FORM_CHANGE",
+    // e.g. 
+    // payload: {name: "username", value: "B"}
+    // payload: {name: "username", value: "BA"}
+    // payload: {name: "username", value: "BAT"}
+    // passing to userReducer
+    payload: {name: event.target.name, value: event.target.value}
+})
