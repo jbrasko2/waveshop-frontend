@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setSelectedSynth, unsetSynth } from '../redux/actionCreators'
+import ReviewCard from '../components/ReviewCard'
 
 class SynthPage extends Component {
 
@@ -16,18 +17,23 @@ class SynthPage extends Component {
     }
 
     renderPage = () => {
-        const { name, image, price, shortDesc, longDesc, stock, history } = this.props
+        const { name, image, price, shortDesc, longDesc, stock, history, reviews } = this.props
         return (
-            <div className="show">
-            <h3>{name}</h3>
-            <p>{shortDesc}</p>
-            <img src={image} alt={name} />
-            <p>${price}</p>
-            <p>In-Stock: {stock}</p>
-            <br/>
-            <p>{longDesc}</p>
-            <button onClick={history.goBack}>Back</button>
-            </div>
+            <>
+                <div className="show">
+                    <h3>{name}</h3>
+                    <p>{shortDesc}</p>
+                    <img src={image} alt={name} />
+                    <p>${price}</p>
+                    <p>In-Stock: {stock}</p>
+                    <br/>
+                    <p>{longDesc}</p>
+                    <button onClick={history.goBack}>Back</button>
+                </div>
+                <div className="reviews">
+                    {reviews.map(review => <ReviewCard key={review.id} {...review} />)}
+                </div>
+            </>
         )
     }
 

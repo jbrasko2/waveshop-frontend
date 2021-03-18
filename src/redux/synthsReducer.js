@@ -5,12 +5,19 @@ const nullSynth = {
     price: "",
     shortDesc: "",
     longDesc: "",
-    stock: ""
+    stock: "",
+    reviews: []
+}
+
+const nullReviewForm = {
+    content: "",
+    rating: 0
 }
 
 const initialState = {
     synths: [],
-    selectedSynth: nullSynth
+    selectedSynth: nullSynth,
+    reviewForm: nullReviewForm
 }
 
 const synthsReducer = (state = initialState, action) => {
@@ -22,6 +29,13 @@ const synthsReducer = (state = initialState, action) => {
             return {...state, selectedSynth: action.payload}
         case "UNSET_SYNTH":
             return {...state, selectedSynth: nullSynth}
+        case "REVIEW_FORM_CHANGE":
+            return {...state, reviewForm: {
+                ...state.reviewForm,
+                // if the payload's name is "content", this will update the
+                // content key in the reviewForm in state with the new payload value
+                [action.payload.name]: action.payload.value
+            }}    
         default: 
             return state
     }
