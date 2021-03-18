@@ -36,3 +36,20 @@ export const handleLoginFormChange = event => ({
     // passing to userReducer
     payload: {name: event.target.name, value: event.target.value}
 })
+
+export const sendSignup = (userData) => {
+    return dispatch => {
+        fetch(API + "/users", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+        .then(res => res.json())
+        .then(data => dispatch({
+            type: "SET_USER",
+            payload: {user: data.user}
+        }))
+    }
+}

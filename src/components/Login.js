@@ -1,14 +1,24 @@
 import React from 'react'
-import { toggleSignup, handleLoginFormChange } from '../redux/actionCreators'
+import { toggleSignup, handleLoginFormChange, sendSignup } from '../redux/actionCreators'
 import { connect } from 'react-redux'
 
 const Login = props => {
-    const { signup, toggleSignup, form, handleLoginFormChange } = props
+    const { signup, toggleSignup, form, handleLoginFormChange, sendSignup } = props
     const { username, password, passConf } = form
+    const onSubmit = event => {
+        event.preventDefault()
+        if (signup){
+            if (password === passConf){
+                sendSignup({username: username, password: password})
+            } else {
+                alert("Those passwords don't match")
+            }
+        }
+    }
     return (
         <div className="loginForm">
             <h2>{signup ? "Sign Up" : "Login"}</h2>
-            <form>
+            <form onSubmit={onSubmit}>
                 <label htmlFor="username">Username: </label>
                 <input 
                     type="text" 
@@ -51,4 +61,4 @@ const mapStateToProps = state => ({
     form: state.user.loginForm
 })
 
-export default connect(mapStateToProps, { toggleSignup, handleLoginFormChange })(Login)
+export default connect(mapStateToProps, { toggleSignup, handleLoginFormChange, sendSignup })(Login)
