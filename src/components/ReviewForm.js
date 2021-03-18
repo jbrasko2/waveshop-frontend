@@ -1,11 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { } from '../redux/actionCreators'
+import { reviewFormChange, submitReview } from '../redux/actionCreators'
 
 const ReviewForm = props => {
 
+    const { content, rating } = props.form
+
     const onSubmit = event => {
         event.preventDefault()
+        props.submitReview({...props.form, synth_id: props.synth_id})
     }
 
     return(
@@ -16,23 +19,22 @@ const ReviewForm = props => {
                 id="rating" 
                 name="rating" 
                 value={rating} 
-                onChange={handleReviewFormChange}
+                onChange={props.reviewFormChange}
             /><br/>
-            <label htmlFor="userPassword">Password: </label>
-            <input 
-                type="password" 
-                id="userPassword" 
-                name="password" 
-                value={password}
-                onChange={handleReviewFormChange} 
-            /><br/>
+            <label htmlFor="content">Content: </label>
+            <textarea 
+                id="content" 
+                name="content" 
+                value={content}
+                onChange={props.reviewFormChange} 
+            ></textarea><br/>
             <input type="submit" value="Continue" />
         </form>
     )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => ({
+    form: state.synths.reviewForm
+})
 
-}
-
-export default connect(mapStateToProps)(ReviewForm)
+export default connect(mapStateToProps, { reviewFormChange, submitReview })(ReviewForm)

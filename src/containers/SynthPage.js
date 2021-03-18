@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setSelectedSynth, unsetSynth } from '../redux/actionCreators'
 import ReviewCard from '../components/ReviewCard'
+import ReviewForm from '../components/ReviewForm'
 
 class SynthPage extends Component {
 
@@ -17,7 +18,7 @@ class SynthPage extends Component {
     }
 
     renderPage = () => {
-        const { name, image, price, shortDesc, longDesc, stock, history, reviews } = this.props
+        const { id, name, image, price, shortDesc, longDesc, stock, history, reviews } = this.props
         return (
             <>
                 <div className="show">
@@ -31,6 +32,8 @@ class SynthPage extends Component {
                     <button onClick={history.goBack}>Back</button>
                 </div>
                 <div className="reviews">
+                {/* need to wrap reviewForm to check if user is logged*/}
+                <ReviewForm synth_id={id} />
                     {reviews.map(review => <ReviewCard key={review.id} {...review} />)}
                 </div>
             </>

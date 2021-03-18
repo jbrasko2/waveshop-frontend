@@ -94,3 +94,26 @@ export const autoLogin = () => {
     })
     }
 }
+
+export const reviewFormChange = event => ({
+    type: "REVIEW_FORM_CHANGE",
+    payload: {name: event.target.name, value: event.target.value}
+})
+
+export const submitReview = reviewData => {
+    return dispatch => {
+        fetch(API + "/reviews", {
+            method: 'POST',
+            headers: {
+                'Authorization': localStorage.token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(reviewData)
+        })
+        .then(res => res.json())
+        .then(review => dispatch({
+            type: "SET_REVIEW",
+            payload: review
+        }))
+    }
+}

@@ -35,7 +35,16 @@ const synthsReducer = (state = initialState, action) => {
                 // if the payload's name is "content", this will update the
                 // content key in the reviewForm in state with the new payload value
                 [action.payload.name]: action.payload.value
-            }}    
+            }}
+        case "SET_REVIEW":
+            return {
+                ...state,
+                selectedSynth: {
+                    ...state.selectedSynth,
+                    reviews: [...state.selectedSynth.reviews, action.payload]
+                },
+                reviewForm: nullReviewForm
+            }
         default: 
             return state
     }
