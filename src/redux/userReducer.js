@@ -1,3 +1,5 @@
+// reducers should be side-effect free, their one job is to return a hash (redux design pattern)
+
 const initialLoginForm = {
     username: "",
     password: "",

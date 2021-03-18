@@ -47,9 +47,32 @@ export const sendSignup = (userData) => {
             body: JSON.stringify(userData)
         })
         .then(res => res.json())
-        .then(res => dispatch({
+        .then(res => {
+            localStorage.token = res.token
+            dispatch({
             type: "SET_USER",
             payload: {user: res.user}
-        }))
+        })
+    })
+    }
+}
+
+export const sendLogin = (userData) => {
+    return dispatch => {
+        fetch(API + "/login", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+        .then(res => res.json())
+        .then(res => {
+            localStorage.token = res.token
+            dispatch({
+            type: "SET_USER",
+            payload: {user: res.user}
+        })
+    })
     }
 }
