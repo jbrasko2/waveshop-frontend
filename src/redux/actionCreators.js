@@ -47,9 +47,9 @@ export const sendSignup = (userData) => {
             body: JSON.stringify(userData)
         })
         .then(res => res.json())
-        .then(data => dispatch({
+        .then(res => dispatch({
             type: "SET_USER",
-            payload: {user: data.user}
+            payload: {user: res.user}
         }))
     }
 }

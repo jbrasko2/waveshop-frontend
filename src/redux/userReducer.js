@@ -22,6 +22,9 @@ const userReducer = (state = initialState, action) => {
                 // username key in the loginForm in state with the new payload value
                 [action.payload.name]: action.payload.value
             }}
+        case "SET_USER":
+            // overwrites itialState id and username
+            return {...state, ...action.payload.user}
         default: 
             return state
     }
