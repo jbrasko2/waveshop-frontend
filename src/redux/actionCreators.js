@@ -76,3 +76,21 @@ export const sendLogin = (userData) => {
     })
     }
 }
+
+export const autoLogin = () => {
+    return dispatch => {
+        fetch(API + "/autologin", {
+            method: 'POST',
+            headers: {
+                'Authorization': localStorage.token
+            },
+        })
+        .then(res => res.json())
+        .then(res => {
+            dispatch({
+            type: "SET_USER",
+            payload: {user: res.user}
+        })
+    })
+    }
+}

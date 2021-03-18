@@ -4,12 +4,13 @@ import { connect } from 'react-redux'
 import SynthCards from './containers/SynthCards'
 import SynthPage from './components/SynthPage'
 import Login from './components/Login'
-import { getSynths } from './redux/actionCreators'
+import { getSynths, autoLogin } from './redux/actionCreators'
 import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
 
   componentDidMount() {
+    localStorage.token && this.props.autoLogin()
     this.props.getSynths()
   }
 
@@ -32,4 +33,4 @@ class App extends Component {
 
 const mapStateToProps = state => ({user: state.user})
 
-export default connect(mapStateToProps, { getSynths })(App)
+export default connect(mapStateToProps, { getSynths, autoLogin })(App)
