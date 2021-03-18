@@ -8,12 +8,12 @@ const nullSynth = {
     stock: ""
 }
 
-const initialSynthState = {
+const initialState = {
     synths: [],
     selectedSynth: nullSynth
 }
 
-const synthsReducer = (state = initialSynthState, action) => {
+const synthsReducer = (state = initialState, action) => {
     // console.log("In synths reducer", state)
     switch (action.type) {
         case "GET_SYNTHS":

@@ -26,3 +26,5 @@ export const setSelectedSynth = id => {
 }
 
 export const unsetSynth = () => ({type: "UNSET_SYNTH"})
+
+export const toggleSignup = () => ({type: "TOGGLE_SIGNUP"})
