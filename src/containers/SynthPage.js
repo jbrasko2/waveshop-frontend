@@ -18,7 +18,7 @@ class SynthPage extends Component {
     }
 
     renderPage = () => {
-        const { id, name, image, price, shortDesc, longDesc, stock, history, reviews } = this.props
+        const { id, name, image, price, shortDesc, longDesc, stock, history, reviews, user_id } = this.props
         return (
             <>
                 <div className="show">
@@ -33,7 +33,7 @@ class SynthPage extends Component {
                 </div>
                 <div className="reviews">
                 {/* need to wrap reviewForm to check if user is logged*/}
-                    <ReviewForm synth_id={id} />
+                    {user_id && <ReviewForm synth_id={id} />}
                     {reviews.map(review => <ReviewCard key={review.id} {...review} />)}
                 </div>
             </>
@@ -50,7 +50,8 @@ class SynthPage extends Component {
 }
 
 const mapStateToProps = state => ({
-    ...state.synths.selectedSynth
+    ...state.synths.selectedSynth,
+    user_id: state.user.id
 })
 
 export default connect(mapStateToProps, { setSelectedSynth, unsetSynth })(SynthPage)

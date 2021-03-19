@@ -53,7 +53,7 @@ const Login = props => {
                 <input type="submit" value="Continue" />
             </form>
             <br/>
-            <button onClick={toggleSignup}>Or... {signup ? "Login" : "Sign Up"}</button>
+            <button onClick={toggleSignup}> {signup ? "Login" : "Sign Up"}</button>
         </div>
     )
 }

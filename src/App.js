@@ -19,16 +19,15 @@ class App extends Component {
       <>
         <h1>WaveShop</h1>
         {this.props.user.id ?
-        <>
-          <button onClick={this.props.logout}>Logout</button>
-          <Switch>
-            <Route path="/synths/:id" component={SynthPage} />
-            <Route path="/synths" component={SynthCards} />
-          </Switch>
-        </>
+        <button onClick={this.props.logout}>Logout</button>
         :
         <Login />
         }
+        <Switch>
+            <Route exact path="/" component={SynthCards} />
+            <Route exact path="/synths" component={SynthCards} /> 
+            <Route path="/synths/:id" component={SynthPage} />
+        </Switch>
       </>
     )
   }
