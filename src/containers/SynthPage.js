@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setSelectedSynth, unsetSynth } from '../redux/actionCreators'
+import { setSelectedSynth, unsetSynth} from '../redux/actionCreators'
 import ReviewCard from '../components/ReviewCard'
 import ReviewForm from '../components/ReviewForm'
 

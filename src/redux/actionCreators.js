@@ -127,3 +127,31 @@ export const logout = () => {
         dispatch({type: "LOGOUT"})
     }
 }
+
+export const addToCart = (synthId) => {
+    return {
+        type: "ADD_TO_CART",
+        payload: {
+            id: synthId
+        }
+    }
+}
+
+export const removeFromCart = (synthId) => {
+    return {
+        type: "REMOVE_FROM_CART",
+        payload: {
+            id: synthId
+        }
+    }
+}
+
+export const adjustQty = (synthId, value) => {
+    return {
+        type: "ADJUST_QTY",
+        payload: {
+            id: synthId,
+            qty: value
+        }
+    }
+}
