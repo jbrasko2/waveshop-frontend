@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setSelectedSynth, unsetSynth} from '../redux/actionCreators'
+import { addToCart, setSelectedSynth, unsetSynth} from '../redux/actionCreators'
 import ReviewCard from '../components/ReviewCard'
 import ReviewForm from '../components/ReviewForm'
 
@@ -29,6 +29,9 @@ class SynthPage extends Component {
                     <p>${price}</p>
                     <p>In-Stock: {stock}</p>
                     <br/>
+                    <button onClick={() => addToCart(id)}>
+                        Add To Cart
+                    </button>
                     <p>{longDesc}</p>
                 </div>
                 <div className="reviews">
@@ -54,4 +57,4 @@ const mapStateToProps = state => ({
     user_id: state.user.id
 })
 
-export default connect(mapStateToProps, { setSelectedSynth, unsetSynth })(SynthPage)
+export default connect(mapStateToProps, { setSelectedSynth, unsetSynth, addToCart })(SynthPage)
