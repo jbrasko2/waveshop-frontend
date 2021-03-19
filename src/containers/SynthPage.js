@@ -21,6 +21,7 @@ class SynthPage extends Component {
         const { id, name, image, price, shortDesc, longDesc, stock, history, reviews, user_id } = this.props
         return (
             <>
+                <button onClick={history.goBack}>Back</button>
                 <div className="show">
                     <h3>{name}</h3>
                     <p>{shortDesc}</p>
@@ -29,7 +30,6 @@ class SynthPage extends Component {
                     <p>In-Stock: {stock}</p>
                     <br/>
                     <p>{longDesc}</p>
-                    <button onClick={history.goBack}>Back</button>
                 </div>
                 <div className="reviews">
                 {/* need to wrap reviewForm to check if user is logged*/}

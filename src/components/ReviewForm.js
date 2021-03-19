@@ -11,7 +11,9 @@ const ReviewForm = props => {
         props.submitReview({...props.form, synth_id: props.synth_id})
     }
 
-    return(
+return(
+    <>
+        <h3>Write a review!</h3>
         <form onSubmit={ onSubmit }>
             <label htmlFor="rating">Rating: </label>
             <input 
@@ -21,15 +23,16 @@ const ReviewForm = props => {
                 value={rating} 
                 onChange={props.reviewFormChange}
             /><br/>
-            <label htmlFor="content">Content: </label>
+            <label htmlFor="content">Content: </label><br/>
             <textarea 
                 id="content" 
                 name="content" 
                 value={content}
                 onChange={props.reviewFormChange} 
             ></textarea><br/>
-            <input type="submit" value="Continue" />
+            <input type="submit" value="Submit" />
         </form>
+    </>
     )
 }
 
