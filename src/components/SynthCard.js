@@ -13,6 +13,12 @@ const SynthCard = props => {
                 </li>
             </ul>
             <h3>${price}</h3>
+            <Link to={"/synths/" + id}>
+                <button>
+                    View
+                </button>
+            </Link>
+            <br/><br/>
         </div>
     )
 }

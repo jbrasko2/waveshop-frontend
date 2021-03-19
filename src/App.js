@@ -23,6 +23,7 @@ class App extends Component {
         :
         <Login />
         }
+        <br/>
         <Switch>
             <Route exact path="/" component={SynthCards} />
             <Route exact path="/synths" component={SynthCards} /> 
