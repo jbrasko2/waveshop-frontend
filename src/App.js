@@ -1,6 +1,7 @@
 import './App.css'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Title from './components/Title'
 import SynthCards from './containers/SynthCards'
 import SynthPage from './containers/SynthPage'
 import Login from './components/Login'
@@ -16,8 +17,8 @@ class App extends Component {
 
   render () {
     return (
-      <>
-        <h1>WaveShop</h1>
+      <div className="App">
+        <Title />
         {this.props.user.id ?
         <button onClick={this.props.logout}>Logout</button>
         :
@@ -29,7 +30,7 @@ class App extends Component {
             <Route exact path="/synths" component={SynthCards} /> 
             <Route path="/synths/:id" component={SynthPage} />
         </Switch>
-      </>
+      </div>
     )
   }
 }
