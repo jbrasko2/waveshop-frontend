@@ -35,6 +35,9 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({user: state.user})
+const mapStateToProps = state => ({
+  user: state.user,
+  errors: state.errors
+})
 
 export default connect(mapStateToProps, { getSynths, autoLogin, logout })(App)

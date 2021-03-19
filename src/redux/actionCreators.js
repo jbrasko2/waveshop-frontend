@@ -68,6 +68,9 @@ export const sendLogin = (userData) => {
         })
         .then(res => res.json())
         .then(res => {
+            if (res.error) {
+                alert(res.error)
+            }
             localStorage.token = res.token
             dispatch({
             type: "SET_USER",

@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 const Login = props => {
     const { signup, toggleSignup, form, handleLoginFormChange, sendSignup, sendLogin } = props
     const { username, password, passConf } = form
+    
     const onSubmit = event => {
         event.preventDefault()
         if (signup){
@@ -17,6 +18,7 @@ const Login = props => {
             sendLogin({username: username, password: password})
         }
     }
+
     return (
         <div className="loginForm">
             <h2>{signup ? "Sign Up" : "Login"}</h2>
