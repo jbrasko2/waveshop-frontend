@@ -18,6 +18,8 @@ return(
             <label htmlFor="rating">Rating: </label>
             <input 
                 type="number" 
+                min="0"
+                max="5"
                 id="rating" 
                 name="rating" 
                 value={rating} 
