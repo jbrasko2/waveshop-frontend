@@ -12,7 +12,7 @@ const ReviewForm = props => {
     }
 
 return(
-    <>
+    <div className="reviewForm">
         <h3>Write a review!</h3>
         <form onSubmit={ onSubmit }>
             <label htmlFor="rating">Rating: </label>
@@ -34,7 +34,7 @@ return(
             ></textarea><br/>
             <input type="submit" value="Submit" />
         </form>
-    </>
+    </div>
     )
 }
 

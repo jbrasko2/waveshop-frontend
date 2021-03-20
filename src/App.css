@@ -21,7 +21,12 @@
  }
 
  .card {
-   border-style: solid;
+   border-top: solid;
+   padding-left: 2%;
+ }
+
+ .show {
+  padding-left: 2%;
  }
 
  .show img {
@@ -31,6 +36,11 @@
 
  .review {
    border-style: solid;
+   padding-left: 2%;
+ }
+
+ .reviewForm {
+   padding-left: 2%;
  }
 
  textarea {
