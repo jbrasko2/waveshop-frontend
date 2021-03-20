@@ -2,11 +2,12 @@ import './App.css'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Title from './components/Title'
+import About from './components/About'
 import SynthCards from './containers/SynthCards'
 import SynthPage from './containers/SynthPage'
 import Login from './components/Login'
 import { getSynths, autoLogin, logout } from './redux/actionCreators'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 
 class App extends Component {
 
@@ -24,11 +25,17 @@ class App extends Component {
         :
         <Login />
         }
+        <Link to="/about" >
+          <button>
+            About
+          </button>
+        </Link>
         <br/>
         <Switch>
             <Route exact path="/" component={SynthCards} />
             <Route exact path="/synths" component={SynthCards} /> 
             <Route path="/synths/:id" component={SynthPage} />
+            <Route exact path="/about" component={About} />
         </Switch>
       </div>
     )
