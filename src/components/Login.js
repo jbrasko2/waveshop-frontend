@@ -16,9 +16,9 @@ const Login = props => {
             }
         } else {
             sendLogin({username: username, password: password})
+            props.history.push('/')
         }
     }
-
     return (
         <div className="loginForm">
             <h2>{signup ? "Sign Up" : "Login"}</h2>

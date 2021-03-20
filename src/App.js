@@ -23,7 +23,11 @@ class App extends Component {
         {this.props.user.id ?
         <button onClick={this.props.logout}>Logout</button>
         :
-        <Login />
+        <Link to="/login">
+          <button>
+            Login
+          </button>
+        </Link>
         }
         <Link to="/about" >
           <button>
@@ -36,6 +40,7 @@ class App extends Component {
             <Route exact path="/synths" component={SynthCards} /> 
             <Route path="/synths/:id" component={SynthPage} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/login" component={Login} />
         </Switch>
       </div>
     )
