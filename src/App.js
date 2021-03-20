@@ -2,6 +2,7 @@ import './App.css'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Title from './components/Title'
+import Navbar from './components/Navbar'
 import About from './components/About'
 import SynthCards from './containers/SynthCards'
 import SynthPage from './containers/SynthPage'
@@ -20,21 +21,16 @@ class App extends Component {
     return (
       <div className="App">
         <Title />
+        <Navbar />
         {this.props.user.id ?
         <button onClick={this.props.logout}>Logout</button>
         :
         <Link to="/login">
           <button>
-            Login
+            Login / Sign Up
           </button>
         </Link>
         }
-        <Link to="/about" >
-          <button>
-            About
-          </button>
-        </Link>
-        <br/>
         <Switch>
             <Route exact path="/" component={SynthCards} />
             <Route exact path="/synths" component={SynthCards} /> 
