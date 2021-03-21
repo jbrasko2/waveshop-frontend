@@ -29,7 +29,7 @@ class SynthPage extends Component {
                     <p>${price}</p>
                     <p>In-Stock: {stock}</p>
                     <br/>
-                    <button onClick={() => addToCart(id)}>
+                    <button onClick={() => this.props.addToCart(id)}>
                         Add To Cart
                     </button>
                     <p>{longDesc}</p>

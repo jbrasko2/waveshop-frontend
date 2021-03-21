@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Title from './components/Title'
 import Navbar from './components/Navbar'
 import About from './components/About'
+import Cart from './components/Cart'
 import SynthCards from './containers/SynthCards'
 import SynthPage from './containers/SynthPage'
 import Login from './components/Login'
@@ -37,6 +38,7 @@ class App extends Component {
             <Route path="/synths/:id" component={SynthPage} />
             <Route exact path="/about" component={About} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/cart" component={Cart} />
         </Switch>
       </div>
     )

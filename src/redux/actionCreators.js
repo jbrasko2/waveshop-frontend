@@ -128,12 +128,43 @@ export const logout = () => {
     }
 }
 
+// export const addToCart = synthId => {
+//     return dispatch => {
+//         dispatch({
+//             type: "ADD_TO_CART",
+//             payload: {id: synthId}
+//         })
+//     }
+// }
+
 export const addToCart = synthId => {
-    return dispatch => {
+    return (dispatch, getState) => {
+        const synths = getState().synths.synths
         dispatch({
             type: "ADD_TO_CART",
-            payload: {id: synthId}
+            payload: {id: synthId, synths: synths}
         })
+    }
+}
+
+export const removeFromCart = (synthId) => {
+    return dispatch => {
+        dispatch({
+            type: "REMOVE_FROM_CART",
+            payload: {
+                id: synthId
+            }
+        })
+    }
+}
+
+export const adjustQty = (synthId, value) => {
+    return {
+        type: "ADJUST_QTY",
+        payload: {
+            id: synthId,
+            qty: value
+        }
     }
 }
 

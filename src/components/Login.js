@@ -16,7 +16,7 @@ const Login = props => {
             }
         } else {
             sendLogin({username: username, password: password})
-            props.history.push('/')
+            props.history.goBack()
         }
     }
     return (

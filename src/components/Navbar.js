@@ -13,6 +13,9 @@ const Navbar = () => {
                         About
                     </button>
                 </Link>
+                <Link to="/cart">
+                    <button>Cart</button>
+                </Link>
             </div>
         </nav> 
     )
