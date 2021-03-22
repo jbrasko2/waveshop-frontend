@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addToCart, setSelectedSynth, unsetSynth} from '../redux/actionCreators'
+import { setSelectedSynth, unsetSynth, addToCart } from '../redux/actionCreators'
 import ReviewCard from '../components/ReviewCard'
 import ReviewForm from '../components/ReviewForm'
 
@@ -29,7 +29,9 @@ class SynthPage extends Component {
                     <p>${price}</p>
                     <p>In-Stock: {stock}</p>
                     <br/>
-                    <button onClick={() => this.props.addToCart(id)}>
+                    <button onClick={() => {
+                        this.props.addToCart(id)
+                        }}>
                         Add To Cart
                     </button>
                     <p>{longDesc}</p>

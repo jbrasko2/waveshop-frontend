@@ -128,15 +128,6 @@ export const logout = () => {
     }
 }
 
-// export const addToCart = synthId => {
-//     return dispatch => {
-//         dispatch({
-//             type: "ADD_TO_CART",
-//             payload: {id: synthId}
-//         })
-//     }
-// }
-
 export const addToCart = synthId => {
     return (dispatch, getState) => {
         const synths = getState().synths.synths
