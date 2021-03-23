@@ -159,3 +159,15 @@ export const adjustQty = (synthId, value) => {
     }
 }
 
+export const searchSynths = query => {
+    return dispatch => {
+        fetch(API + "/synths")
+        .then(res => res.json())
+        .then(data => data.filter(synth => synth.name.includes(query)))
+        .then(synthData => dispatch({
+            type: "SEARCH_SYNTHS",
+            payload: synthData
+        }))
+    }
+}
+

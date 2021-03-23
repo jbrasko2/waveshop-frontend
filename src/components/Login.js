@@ -11,6 +11,7 @@ const Login = props => {
         if (signup){
             if (password === passConf){
                 sendSignup({username: username, password: password})
+                props.history.goBack()
             } else {
                 alert("Passwords must match")
             }

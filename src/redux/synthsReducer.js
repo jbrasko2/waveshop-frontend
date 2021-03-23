@@ -45,6 +45,8 @@ const synthsReducer = (state = initialState, action) => {
                 },
                 reviewForm: nullReviewForm
             }
+        case "SEARCH_SYNTHS":
+            return {...state, synths: action.payload}
         default: 
             return state
     }
