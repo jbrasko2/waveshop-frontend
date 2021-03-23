@@ -37,7 +37,7 @@ export const handleLoginFormChange = event => ({
     payload: {name: event.target.name, value: event.target.value}
 })
 
-export const sendSignup = (userData) => {
+export const sendSignup = userData => {
     return dispatch => {
         fetch(API + "/users", {
             method: 'POST',
@@ -57,7 +57,7 @@ export const sendSignup = (userData) => {
     }
 }
 
-export const sendLogin = (userData) => {
+export const sendLogin = userData => {
     return dispatch => {
         fetch(API + "/login", {
             method: 'POST',
@@ -138,7 +138,7 @@ export const addToCart = synthId => {
     }
 }
 
-export const removeFromCart = (synthId) => {
+export const removeFromCart = synthId => {
     return dispatch => {
         dispatch({
             type: "REMOVE_FROM_CART",
