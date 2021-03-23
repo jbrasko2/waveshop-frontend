@@ -10,6 +10,22 @@
   font-size: 300%;
 }
 
+nav {
+  overflow: auto;
+}
+
+.nav-buttons {
+  float: left;
+}
+
+.user-container {
+  float: right;
+}
+
+.search-form {
+  text-align: center;
+}
+
 .crop {
   height: 300px;
   width: 400px;

@@ -8,8 +8,8 @@ import Cart from './components/Cart'
 import SynthCards from './containers/SynthCards'
 import SynthPage from './containers/SynthPage'
 import Login from './components/Login'
-import { getSynths, autoLogin, logout } from './redux/actionCreators'
-import { Switch, Route, Link } from 'react-router-dom'
+import { getSynths, autoLogin } from './redux/actionCreators'
+import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
 
@@ -23,28 +23,18 @@ class App extends Component {
       <div className="App">
         <Title />
         <Navbar />
-        {this.props.user.id ?
-        <button onClick={this.props.logout}>Logout</button>
-        :
-        <Link to="/login">
-          <button>
-            Login / Sign Up
-          </button>
-        </Link>
-        }
+        <br/>
         <Switch>
             <Route exact path="/" component={SynthCards} />
             <Route exact path="/synths" component={SynthCards} /> 
             <Route path="/synths/:id" component={SynthPage} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/cart" component={Cart} />
+            <Route path="/about" component={About} />
+            <Route path="/login" component={Login} />
+            <Route path="/cart" component={Cart} />
         </Switch>
       </div>
     )
   }
 }
 
-const mapStateToProps = state => ({user: state.user})
-
-export default connect(mapStateToProps, { getSynths, autoLogin, logout })(App)
+export default connect(null, { getSynths, autoLogin })(App)
