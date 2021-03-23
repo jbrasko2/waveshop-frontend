@@ -4,7 +4,7 @@ import { combineReducers } from 'redux'
 
 
 
-// combines multiple reducers, keeping parts fo state separate based on keys we define
+// combines multiple reducers, keeping parts of state separate based on keys we define
 export const reducer = combineReducers({
     synths: synthsReducer,
     user: userReducer
