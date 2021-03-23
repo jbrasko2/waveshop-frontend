@@ -3,6 +3,7 @@ const API = "http://localhost:7000"
 // thunk allows us to return a function that takes in the argument of dispatch, instead of plain object representing the action
 export const getSynths = () => {
     return dispatch => {
+        dispatch({type: "START_GET_SYNTHS_REQUEST"})
         fetch(API + "/synths")
         .then(res => res.json())
         .then(synthData => dispatch({

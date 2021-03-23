@@ -17,14 +17,17 @@ const nullReviewForm = {
 const initialState = {
     synths: [],
     selectedSynth: nullSynth,
-    reviewForm: nullReviewForm
+    reviewForm: nullReviewForm,
+    requesting: false
 }
 
 const synthsReducer = (state = initialState, action) => {
     // console.log("In synths reducer", state)
     switch (action.type) {
+        case "START_GET_SYNTHS_REQUEST":
+            return {...state, synths: [...state.synths], requesting: true}
         case "GET_SYNTHS":
-            return {...state, synths: action.payload}
+            return {...state, synths: action.payload, requesting: false}
         case "SET_SELECTED_SYNTH":
             return {...state, selectedSynth: action.payload}
         case "UNSET_SYNTH":
