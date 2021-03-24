@@ -150,16 +150,6 @@ export const removeFromCart = synthId => {
     }
 }
 
-export const adjustQty = (synthId, value) => {
-    return {
-        type: "ADJUST_QTY",
-        payload: {
-            id: synthId,
-            qty: value
-        }
-    }
-}
-
 export const searchSynths = query => {
     return dispatch => {
         fetch(API + "/synths")
