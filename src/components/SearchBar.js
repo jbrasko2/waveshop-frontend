@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { searchSynths } from '../redux/actionCreators'
+import { connect } from 'react-redux'
 
 class SearchBar extends Component {
 
@@ -23,4 +25,4 @@ class SearchBar extends Component {
     }
 }
 
-export default SearchBar
+export default connect(null, { searchSynths })(SearchBar)
