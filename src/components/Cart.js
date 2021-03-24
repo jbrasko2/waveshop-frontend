@@ -1,5 +1,5 @@
 import React from 'react'
-import { removeFromCart, adjustQty } from '../redux/actionCreators'
+import { removeFromCart } from '../redux/actionCreators'
 import { connect } from 'react-redux'
 
 const Cart = props => {
@@ -24,4 +24,4 @@ const Cart = props => {
 
 const mapStateToProps = state => ({cart: state.user.cart})
 
-export default connect(mapStateToProps, { removeFromCart, adjustQty })(Cart)
+export default connect(mapStateToProps, { removeFromCart })(Cart)
