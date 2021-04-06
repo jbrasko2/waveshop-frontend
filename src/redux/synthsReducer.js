@@ -22,7 +22,6 @@ const initialState = {
 }
 
 const synthsReducer = (state = initialState, action) => {
-    // console.log("In synths reducer", state)
     switch (action.type) {
         case "START_GET_SYNTHS_REQUEST":
             return {...state, synths: [...state.synths], requesting: true}
@@ -35,8 +34,6 @@ const synthsReducer = (state = initialState, action) => {
         case "REVIEW_FORM_CHANGE":
             return {...state, reviewForm: {
                 ...state.reviewForm,
-                // if the payload's name is "content", this will update the
-                // content key in the reviewForm in state with the new payload value
                 [action.payload.name]: action.payload.value
             }}
         case "SET_REVIEW":

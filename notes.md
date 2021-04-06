@@ -1,4 +1,0 @@
-- User can login/logout, edit info
-- User can browse synths, pick between brands, filter
-- User can view product page
-- User can favorite, purchase synth

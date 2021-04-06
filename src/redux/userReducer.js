@@ -21,19 +21,14 @@ const userReducer = (state = initialState, action) => {
         case "LOGIN_FORM_CHANGE":
             return {...state, loginForm: {
                 ...state.loginForm,
-                // if the payload's name is "username", this will update the
-                // username key in the loginForm in state with the new payload value
                 [action.payload.name]: action.payload.value
             }}
         case "SET_USER":
-            // overwrites initialState id and username
             return {...state, ...action.payload.user}
         case "LOGOUT":
             return {...state, id: null, username: null, loginForm: initialLoginForm}
         case "ADD_TO_CART":
-            // Get the item's data from the synths array
             const item = action.payload.synths.find((synth) => synth.id === action.payload.id)
-            // Check if item is in cart already
             const inCart = state.cart.find((item) => 
                 item.id === action.payload.id ? true : false
             )
