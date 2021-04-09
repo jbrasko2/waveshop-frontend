@@ -11,7 +11,7 @@ import { HashRouter } from 'react-router-dom'
 
 const store = createStore(reducer, compose(
   applyMiddleware(thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ))
 
 ReactDOM.render(
