@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/jbrasko2/waveshop-frontend/static/css/main.38376cca.chunk.css",
-    "main.js": "/jbrasko2/waveshop-frontend/static/js/main.9299f4eb.chunk.js",
-    "main.js.map": "/jbrasko2/waveshop-frontend/static/js/main.9299f4eb.chunk.js.map",
-    "runtime-main.js": "/jbrasko2/waveshop-frontend/static/js/runtime-main.28692f0b.js",
-    "runtime-main.js.map": "/jbrasko2/waveshop-frontend/static/js/runtime-main.28692f0b.js.map",
-    "static/js/2.96c783b8.chunk.js": "/jbrasko2/waveshop-frontend/static/js/2.96c783b8.chunk.js",
-    "static/js/2.96c783b8.chunk.js.map": "/jbrasko2/waveshop-frontend/static/js/2.96c783b8.chunk.js.map",
-    "static/js/3.ec178df9.chunk.js": "/jbrasko2/waveshop-frontend/static/js/3.ec178df9.chunk.js",
-    "static/js/3.ec178df9.chunk.js.map": "/jbrasko2/waveshop-frontend/static/js/3.ec178df9.chunk.js.map",
-    "index.html": "/jbrasko2/waveshop-frontend/index.html",
-    "static/css/main.38376cca.chunk.css.map": "/jbrasko2/waveshop-frontend/static/css/main.38376cca.chunk.css.map",
-    "static/js/2.96c783b8.chunk.js.LICENSE.txt": "/jbrasko2/waveshop-frontend/static/js/2.96c783b8.chunk.js.LICENSE.txt"
+    "main.css": "/waveshop-frontend/static/css/main.38376cca.chunk.css",
+    "main.js": "/waveshop-frontend/static/js/main.9299f4eb.chunk.js",
+    "main.js.map": "/waveshop-frontend/static/js/main.9299f4eb.chunk.js.map",
+    "runtime-main.js": "/waveshop-frontend/static/js/runtime-main.b15f10ef.js",
+    "runtime-main.js.map": "/waveshop-frontend/static/js/runtime-main.b15f10ef.js.map",
+    "static/js/2.96c783b8.chunk.js": "/waveshop-frontend/static/js/2.96c783b8.chunk.js",
+    "static/js/2.96c783b8.chunk.js.map": "/waveshop-frontend/static/js/2.96c783b8.chunk.js.map",
+    "static/js/3.ec178df9.chunk.js": "/waveshop-frontend/static/js/3.ec178df9.chunk.js",
+    "static/js/3.ec178df9.chunk.js.map": "/waveshop-frontend/static/js/3.ec178df9.chunk.js.map",
+    "index.html": "/waveshop-frontend/index.html",
+    "static/css/main.38376cca.chunk.css.map": "/waveshop-frontend/static/css/main.38376cca.chunk.css.map",
+    "static/js/2.96c783b8.chunk.js.LICENSE.txt": "/waveshop-frontend/static/js/2.96c783b8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.28692f0b.js",
+    "static/js/runtime-main.b15f10ef.js",
     "static/js/2.96c783b8.chunk.js",
     "static/css/main.38376cca.chunk.css",
     "static/js/main.9299f4eb.chunk.js"
