@@ -2,7 +2,7 @@
 Welcome to the WaveShop App! This React-based app allows users to explore synthesizers that are on sale as well as leave reviews.
 
 ## Usage
-To run the app, visit https://jbrasko2.github.io/waveshop-frontend/#/
+To run the app, visit https://jbrasko2.github.io/waveshop-frontend/
 
 The database is hosted by heroku. You can visit the backend repo at https://github.com/jbrasko2/waveshop-backend
 
