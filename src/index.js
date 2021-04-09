@@ -7,7 +7,7 @@ import { createStore, compose, applyMiddleware } from 'redux'
 import { reducer } from './redux/reducer'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 const store = createStore(reducer, compose(
   applyMiddleware(thunk),
@@ -16,11 +16,11 @@ const store = createStore(reducer, compose(
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <HashRouter>
       <Provider store={store}>
         <App />
       </Provider>
-    </Router>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
