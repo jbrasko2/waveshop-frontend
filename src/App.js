@@ -27,10 +27,10 @@ class App extends Component {
         <Switch>
             <Route exact path="/" component={SynthCards} />
             <Route exact path="/synths" component={SynthCards} /> 
-            <Route path="/synths/:id" component={SynthPage} />
-            <Route path="/about" component={About} />
-            <Route path="/login" component={Login} />
-            <Route path="/cart" component={Cart} />
+            <Route exact path="/synths/:id" component={SynthPage} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/cart" component={Cart} />
         </Switch>
       </div>
     )
