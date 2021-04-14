@@ -5,7 +5,7 @@ import SearchBar from '../components/SearchBar'
 
 const SynthCards = props => { 
     return (
-    props.synths ? 
+    props.synths.filter(synth => synth.id = 1) ? 
         <div className="cards">
         <SearchBar />
             {props.synths.map(synth => <SynthCard key={synth.id} {...synth} />)}
