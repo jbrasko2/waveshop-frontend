@@ -3,15 +3,12 @@ import { connect } from 'react-redux'
 import SynthCard from '../components/SynthCard'
 import SearchBar from '../components/SearchBar'
 
-const SynthCards = props => { 
+const SynthCards = props => {
     return (
-    props.synths.filter(synth => synth.id.includes(1)) ? 
-        <div className="cards">
-        <SearchBar />
-            {props.synths.map(synth => <SynthCard key={synth.id} {...synth} />)}
-        </div>
-    :
-        <div className="loader"></div>
+    <div className="cards">
+    <SearchBar />
+        {props.synths.map(synth => <SynthCard key={synth.id} {...synth} />)}
+    </div>
     )
 }
 
