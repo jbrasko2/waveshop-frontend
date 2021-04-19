@@ -1,4 +1,4 @@
-const API = "https://waveshop-backend.herokuapp.com/"
+const API = "https://waveshop-backend.herokuapp.com"
 
 export const getSynths = () => {
     return dispatch => {
