@@ -1,17 +1,61 @@
 .title {
+  position: sticky;
+  top: 0;
   box-sizing: border-box;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: baseline;
-  background-color: rgb(192, 26, 26);
+  background: #c01a1a;
   font-family: 'Monoton', cursive;
-  color: #fff;
+  color: white;
   font-size: 300%;
 }
 
-nav {
+.nav-area {
+  position: sticky;
+  top: 100px;
   overflow: auto;
+}
+
+button {
+  color: #c01a1a;
+  background: white;
+  border: 3px solid #c01a1a;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  color: white;
+  background: #c01a1a;
+  border-color: white;
+}
+
+button:active {
+  background: #9b1515
+}
+
+.submit-button {
+  color: #c01a1a;
+  background: white;
+  border: 3px solid #c01a1a;
+  padding: 5px 32px;
+  margin: 10px;
+  transition-duration: 0.4s;
+}
+
+.submit-button:hover {
+  color: white;
+  background: #c01a1a;
+  border-color: white;
+}
+
+.submit-button:active {
+  background: #9b1515
 }
 
 .nav-buttons {
@@ -23,22 +67,30 @@ nav {
 }
 
 .search-form {
+  width: fit-content;
   text-align: center;
+  margin: 0 auto;
+}
+
+.loginForm, .about, .cart {
+  margin: 0 30px;
 }
 
 .crop {
-  height: 300px;
+  height: auto;
   width: 400px;
   overflow: hidden;
  }
+
  .crop img {
   height: auto;
   width: 400px;
  }
 
  .card {
-   border-top: solid;
+   border: 3px dotted black;
    padding-left: 2%;
+   margin: 30px;
  }
 
  .show {

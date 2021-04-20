@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
     return (
-        <div>
+        <div className="about">
             <h1>About</h1>
             <p>Welcome to <strong>WaveShop</strong>! This website will allow you
             to explore synthesizers for sale and review them.</p>

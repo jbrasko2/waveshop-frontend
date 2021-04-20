@@ -5,10 +5,12 @@ import SearchBar from '../components/SearchBar'
 
 const SynthCards = props => {
     return (
-    <div className="cards">
-    <SearchBar />
-        {props.synths.map(synth => <SynthCard key={synth.id} {...synth} />)}
-    </div>
+    <>
+        <SearchBar />
+        <div className="cards">
+            {props.synths.map(synth => <SynthCard key={synth.id} {...synth} />)}
+        </div>
+    </>
     )
 }
 

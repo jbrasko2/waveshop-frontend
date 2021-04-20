@@ -19,7 +19,7 @@ class SynthPage extends Component {
         const { id, name, image, price, shortDesc, longDesc, stock, history, reviews, user_id } = this.props
         return (
             <>
-                <button onClick={history.goBack}>Back</button>
+                
                 <div className="show">
                     <h3>{name}</h3>
                     <p>{shortDesc}</p>
@@ -32,6 +32,7 @@ class SynthPage extends Component {
                         }}>
                         Add To Cart
                     </button>
+                    <button className="back-button" onClick={history.goBack}>Back</button>
                     <p>{longDesc}</p>
                 </div>
                 <div className="reviews">

@@ -22,8 +22,10 @@ class App extends Component {
     return (
       <div className="App">
         <Title />
-        <Navbar />
-        <br/>
+        <div className="nav-area">
+          <Navbar />
+        </div>
+        
         <Switch>
             <Route exact path="/" component={SynthCards} />
             <Route exact path="/synths" component={SynthCards} /> 
