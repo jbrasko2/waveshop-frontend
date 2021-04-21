@@ -77,14 +77,13 @@ button:active {
 }
 
 .crop {
-  height: auto;
-  width: 400px;
-  overflow: hidden;
+  display: grid;
+  height: 100%;
  }
 
  .crop img {
-  height: auto;
-  width: 400px;
+  max-width: 30%;
+  max-height: 100vh;
  }
 
  .card {
