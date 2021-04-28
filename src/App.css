@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .title {
   position: sticky;
   top: 0;
@@ -141,6 +145,20 @@ button:active {
    padding: 12px;
    color: white;
    background-color: #c01a1a;
+ }
+
+ .long-desc {
+   width: 50%;
+   border: 3px dotted black;
+   padding: 0 24px;
+ }
+
+ .card button {
+   margin: 0;
+ }
+
+ .show button:first-of-type {
+   margin-left: 0;
  }
 
  .loader {

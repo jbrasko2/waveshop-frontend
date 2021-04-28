@@ -21,19 +21,21 @@ class SynthPage extends Component {
             <>
                 
                 <div className="show">
-                    <h3>{name}</h3>
+                    <h1>{name}</h1>
                     <p>{shortDesc}</p>
                     <img src={image} alt={name} />
-                    <p>${price}</p>
+                    <h3>${price}</h3>
                     <p>In-Stock: {stock}</p>
                     <br/>
+                    <div className="long-desc">
+                        <p>{longDesc}</p>
+                    </div>
                     <button onClick={() => {
                         this.props.addToCart(id)
                         }}>
                         Add To Cart
                     </button>
                     <button className="back-button" onClick={history.goBack}>Back</button>
-                    <p>{longDesc}</p>
                 </div>
                 <div className="reviews">
                 {/* need to wrap reviewForm to check if user is logged*/}
