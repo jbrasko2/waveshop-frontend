@@ -22,11 +22,13 @@ button {
   color: #c01a1a;
   background: white;
   border: 3px solid #c01a1a;
-  padding: 15px 32px;
+  padding: 12px 24px;
   text-align: center;
   text-decoration: none;
   margin: 10px;
   transition-duration: 0.4s;
+  font-weight: 600;
+  font-size: large;
 }
 
 button:hover {
@@ -46,6 +48,7 @@ button:active {
   padding: 5px 32px;
   margin: 10px;
   transition-duration: 0.4s;
+  font-weight: 600;
 }
 
 .submit-button:hover {
