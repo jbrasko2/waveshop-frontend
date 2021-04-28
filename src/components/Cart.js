@@ -15,6 +15,9 @@ const Cart = props => {
     return (
         <div className="cart">
             <h1>Cart: {cartSum === 0 ? "Empty" : cartSum}</h1>
+            <div className="total-price-box">
+                Total: ${priceSum.toFixed(2)}
+            </div>
             <ul>
                 {props.cart.map(synth => {
                     return (
@@ -34,9 +37,6 @@ const Cart = props => {
                     )
                 })}
             </ul>
-            <div className="total-price-box">
-                Total: ${priceSum.toFixed(2)}
-            </div>
         </div>
     )
 }

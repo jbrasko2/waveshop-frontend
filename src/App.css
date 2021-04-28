@@ -133,6 +133,13 @@ button:active {
    list-style-type: none;
  }
 
+ .total-price-box {
+   width: fit-content;
+   padding: 12px;
+   color: white;
+   background-color: #c01a1a;
+ }
+
  .loader {
   font-size: 10px;
   margin: 50px auto;
