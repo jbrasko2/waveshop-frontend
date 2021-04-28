@@ -1,11 +1,16 @@
 import React from 'react'
 import { removeFromCart } from '../redux/actionCreators'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Cart = props => {
     let cartSum = props.cart.reduce(function(prev, cur) {
         return prev + cur.qty;
     }, 0);
+
+    let priceSum = props.cart.reduce(function(prev, cur){
+        return (prev + (cur.price * cur.qty))
+    }, 0)
 
     return (
         <div className="cart">
@@ -16,6 +21,12 @@ const Cart = props => {
                         <div className="cart-items">
                             <li>{synth.name} - Qty: {synth.qty}</li>
                             <img src={synth.image} alt={synth.name} /><br/>
+                            <h3>${synth.price}</h3>
+                            <Link to={"/synths/" + synth.id}>
+                                <button>
+                                    View
+                                </button>
+                            </Link>
                             <button onClick={() => props.removeFromCart(synth.id)}>
                                 Remove
                             </button>
@@ -23,6 +34,9 @@ const Cart = props => {
                     )
                 })}
             </ul>
+            <div className="total-price-box">
+                Total: ${priceSum.toFixed(2)}
+            </div>
         </div>
     )
 }

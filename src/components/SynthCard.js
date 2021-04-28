@@ -12,7 +12,7 @@ const SynthCard = props => {
                     <img src={image} alt={name} /><br/>
                 </li>
             </ul>
-            <h3>${price}</h3>
+            <h3>${price.toFixed(2)}</h3>
             <Link to={"/synths/" + id}>
                 <button>
                     View
