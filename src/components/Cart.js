@@ -3,14 +3,19 @@ import { removeFromCart } from '../redux/actionCreators'
 import { connect } from 'react-redux'
 
 const Cart = props => {
+    let cartSum = props.cart.reduce(function(prev, cur) {
+        return prev + cur.qty;
+    }, 0);
+
     return (
         <div className="cart">
-            <h1>Cart:</h1>
+            <h1>Cart: {cartSum === 0 ? "Empty" : cartSum}</h1>
             <ul>
                 {props.cart.map(synth => {
                     return (
                         <div className="cart-items">
                             <li>{synth.name} - Qty: {synth.qty}</li>
+                            <img src={synth.image} alt={synth.name} /><br/>
                             <button onClick={() => props.removeFromCart(synth.id)}>
                                 Remove
                             </button>

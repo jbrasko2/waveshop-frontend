@@ -117,6 +117,17 @@ button:active {
    font-family: 'Roboto', sans-serif;
  }
 
+ .cart-items {
+   margin: 40px;
+   padding: 40px;
+   border: 3px solid black;
+ }
+
+ .cart-items > img {
+   max-height: 200px;
+   margin: 20px;
+ }
+
  .loader {
   font-size: 10px;
   margin: 50px auto;
