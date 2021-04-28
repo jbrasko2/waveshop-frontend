@@ -4,6 +4,10 @@ import { connect } from 'react-redux'
 import { logout, getSynths } from '../redux/actionCreators'
 
 const Navbar = props => {
+    let cartSum = props.cart.reduce(function(prev, cur) {
+        return prev + cur.qty;
+    }, 0);
+    
     return (
         <nav>
             <div className="nav-buttons">
@@ -27,13 +31,13 @@ const Navbar = props => {
                 </Link>
                 }
                 <Link to="/cart">
-                    <button>Cart</button>
+                    <button>Cart: {cartSum}</button>
                 </Link>
             </div>
         </nav> 
     )
 }
 
-const mapStateToProps = state => ({user: state.user})
+const mapStateToProps = state => ({user: state.user, cart: state.user.cart})
 
 export default connect(mapStateToProps, { logout, getSynths })(Navbar)
