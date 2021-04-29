@@ -9,7 +9,7 @@ class SynthCards extends Component {
         return (
             <>
                 <SearchBar />
-                <div className="cards">
+                <div>
                     {this.props.synths.map(synth => <SynthCard key={synth.id} {...synth} />)}
                 </div>
             </>

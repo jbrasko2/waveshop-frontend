@@ -1,13 +1,30 @@
 import React from 'react'
+import styled from 'styled-components/macro'
 
 const ReviewCard = props => { 
     const { username, content, rating } = props
     return (
-        <div className="review">
-            <p>{username}: {rating} STARS</p>
+        <Wrapper>
+            <Username>{username}: </Username> <h3>{rating} STARS</h3>
             <p>{content}</p>
-        </div>
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.div`
+    width: 50%;
+    border: 3px dotted black;
+    padding: 0 24px;
+    margin-bottom: 12px;
+
+    h3 {
+        display: inline-block;
+    }
+`
+
+const Username = styled.h3`
+    color: #c01a1a;
+    display: inline;
+`
 
 export default ReviewCard

@@ -4,6 +4,16 @@ const GlobalStyles = createGlobalStyle`
     *, *::before, *::after {
         box-sizing: border-box;
     }
+
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    }
     
     button {
         color: #c01a1a;
@@ -30,7 +40,7 @@ const GlobalStyles = createGlobalStyle`
 
     textarea {
         resize: none;
-        width: 300px;
+        max-width: 300px;
         height: 100px;
         font-family: 'Roboto', sans-serif;
     }

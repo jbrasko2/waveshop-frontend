@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { reviewFormChange, submitReview } from '../redux/actionCreators'
+import styled from 'styled-components/macro'
 
 const ReviewForm = props => {
 
@@ -12,7 +13,7 @@ const ReviewForm = props => {
     }
 
 return(
-    <div className="reviewForm">
+    <Wrapper>
         <h3>Write a review!</h3>
         <form onSubmit={ onSubmit }>
             <label htmlFor="rating">Rating: </label>
@@ -32,14 +33,45 @@ return(
                 value={content}
                 onChange={props.reviewFormChange} 
             ></textarea><br/>
-            <input type="submit" value="Submit" />
+            <Submit type="submit" value="Submit" />
         </form>
-    </div>
+    </Wrapper>
     )
 }
 
 const mapStateToProps = state => ({
     form: state.synths.reviewForm
 })
+
+const Wrapper = styled.div`
+    margin: 12px 0;
+    padding: 12px;
+    width: 50%;
+    border: 3px solid black;
+
+    h3 {
+        color: #c01a1a;
+    }
+`
+
+const Submit = styled.input`
+    color: #c01a1a;
+    background: white;
+    border: 3px solid #c01a1a;
+    padding: 5px 32px;
+    margin: 12px 0;
+    transition-duration: 0.4s;
+    font-weight: 600;
+
+    &:hover {
+        color: white;
+        background: #c01a1a;
+        border-color: white; 
+    }
+
+    &:active {
+        background: #9b1515
+    }
+`
 
 export default connect(mapStateToProps, { reviewFormChange, submitReview })(ReviewForm)
