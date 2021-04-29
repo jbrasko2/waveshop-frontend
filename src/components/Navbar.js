@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout, getSynths } from '../redux/actionCreators'
+import styled from 'styled-components/macro'
 
 const Navbar = props => {
     let cartSum = props.cart.reduce(function(prev, cur) {
@@ -10,7 +11,7 @@ const Navbar = props => {
     
     return (
         <nav>
-            <div className="nav-buttons">
+            <NavButtonWrapper>
                 <Link to="/">
                     <button onClick={props.getSynths}>Home</button>
                 </Link>
@@ -19,8 +20,8 @@ const Navbar = props => {
                         About
                     </button>
                 </Link>
-            </div>
-            <div className="user-container">
+            </NavButtonWrapper>
+            <UserButtonWrapper>
                 {props.user.id ?
                 <button onClick={props.logout}>Logout</button>
                 :
@@ -33,10 +34,18 @@ const Navbar = props => {
                 <Link to="/cart">
                     <button>Cart: {cartSum}</button>
                 </Link>
-            </div>
+            </UserButtonWrapper>
         </nav> 
     )
 }
+
+const NavButtonWrapper = styled.div`
+    float: left;
+`
+
+const UserButtonWrapper = styled.div`
+    float: right;
+`
 
 const mapStateToProps = state => ({user: state.user, cart: state.user.cart})
 

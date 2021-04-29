@@ -52,11 +52,11 @@ button:active {
 }
 
 .nav-buttons {
-  float: left;
+  
 }
 
 .user-container {
-  float: right;
+  
 }
 
 .search-form {
@@ -111,26 +111,19 @@ button:active {
  }
 
  .cart-items {
-   margin: 40px;
-   padding: 40px;
-   border: 3px solid black;
-   width: 50%;
+   
  }
 
  .cart-items > img {
-   max-height: 200px;
-   margin: 20px;
+   
  }
 
  .cart li {
-   list-style-type: none;
+   
  }
 
  .total-price-box {
-   width: fit-content;
-   padding: 12px;
-   color: white;
-   background-color: #c01a1a;
+   
  }
 
  .long-desc {
