@@ -2,20 +2,6 @@
   box-sizing: border-box;
 }
 
-.title {
-  position: sticky;
-  top: 0;
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  background: #c01a1a;
-  font-family: 'Monoton', cursive;
-  color: white;
-  font-size: 300%;
-}
-
 .nav-area {
   position: sticky;
   top: 100px;
