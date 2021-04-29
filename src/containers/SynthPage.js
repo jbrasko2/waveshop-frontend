@@ -66,7 +66,7 @@ const CardWrapper = styled.div`
     display: inline-block;
     padding: 0 24px;
     max-width: 50%;
-    min-width: 500px;
+    min-width: 320px;
 
     img {
         height: auto;
@@ -86,7 +86,7 @@ const ReviewsWrapper = styled.div`
     display: inline-block;
     vertical-align: top;
     width: 50%;
-    min-width: 500px;
+    min-width: 320px;
     padding: 0 24px;
 `
 
