@@ -63,7 +63,10 @@ const mapStateToProps = state => ({
 })
 
 const CardWrapper = styled.div`
-    padding-left: 2%;
+    display: inline-block;
+    padding: 0 24px;
+    max-width: 50%;
+    min-width: 500px;
 
     img {
         height: auto;
@@ -73,14 +76,18 @@ const CardWrapper = styled.div`
 `
 
 const LongDesc = styled.div`
-    width: 50%;
+    width: 100%;
     border: 3px dotted black;
     padding: 0 24px;
     margin-bottom: 12px;
 `
 
 const ReviewsWrapper = styled.div`
-    margin-left: 2%;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    min-width: 500px;
+    padding: 0 24px;
 `
 
 const AddToCart = styled.button`

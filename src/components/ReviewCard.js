@@ -12,7 +12,6 @@ const ReviewCard = props => {
 }
 
 const Wrapper = styled.div`
-    width: 50%;
     border: 3px dotted black;
     padding: 0 24px;
     margin-bottom: 12px;

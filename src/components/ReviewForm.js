@@ -46,8 +46,7 @@ const mapStateToProps = state => ({
 const Wrapper = styled.div`
     margin: 12px 0;
     padding: 12px;
-    width: 50%;
-    border: 3px solid black;
+    border: 3px solid #c01a1a;
 
     h3 {
         color: #c01a1a;
