@@ -1,6 +1,7 @@
 import React from 'react'
 import { toggleSignup, handleLoginFormChange, sendSignup, sendLogin } from '../redux/actionCreators'
 import { connect } from 'react-redux'
+import styled from 'styled-components/macro'
 
 const Login = props => {
     const { signup, toggleSignup, form, handleLoginFormChange, sendSignup, sendLogin } = props
@@ -21,7 +22,7 @@ const Login = props => {
         }
     }
     return (
-        <div className="loginForm">
+        <Wrapper>
             <h2>{signup ? "Sign Up" : "Login"}</h2>
             <form onSubmit={onSubmit}>
                 <label htmlFor="username">Username: </label>
@@ -53,11 +54,11 @@ const Login = props => {
                         /><br/>
                     </>
                 }
-                <input className="submit-button" type="submit" value="Continue" />
+                <Submit type="submit" value="Continue" />
                 <p>Or</p>
             </form>
             <button onClick={toggleSignup}> {signup ? "Login" : "Sign Up"}</button>
-        </div>
+        </Wrapper>
     )
 }
 
@@ -65,6 +66,30 @@ const mapStateToProps = state => ({
     signup: state.user.signup,
     form: state.user.loginForm
 })
+
+const Wrapper = styled.div`
+    margin: 0 30px;
+`
+
+const Submit = styled.input`
+    color: #c01a1a;
+    background: white;
+    border: 3px solid #c01a1a;
+    padding: 5px 32px;
+    margin: 10px;
+    transition-duration: 0.4s;
+    font-weight: 600;
+
+    &:hover {
+        color: white;
+        background: #c01a1a;
+        border-color: white; 
+    }
+
+    &:active {
+        background: #9b1515
+    }
+`
 
 export default connect(mapStateToProps, { 
     toggleSignup, 

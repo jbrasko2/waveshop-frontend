@@ -10,6 +10,8 @@ import SynthPage from './containers/SynthPage'
 import Login from './components/Login'
 import { getSynths, autoLogin } from './redux/actionCreators'
 import { Switch, Route } from 'react-router-dom'
+import styled from 'styled-components/macro'
+import GlobalStyles from './GlobalStyles'
 
 class App extends Component {
 
@@ -22,9 +24,9 @@ class App extends Component {
     return (
       <div className="App">
         <Title />
-        <div className="nav-area">
+        <NavWrapper>
           <Navbar />
-        </div>
+        </NavWrapper>
         
         <Switch>
             <Route exact path="/" component={SynthCards} />
@@ -34,9 +36,17 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/cart" component={Cart} />
         </Switch>
+
+        <GlobalStyles />
       </div>
     )
   }
 }
+
+const NavWrapper = styled.div`
+  position: sticky;
+  top: 100px;
+  overflow: auto;
+`
 
 export default connect(null, { getSynths, autoLogin })(App)
