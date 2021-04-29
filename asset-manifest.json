@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/waveshop-frontend/static/css/main.ce089041.chunk.css",
-    "main.js": "/waveshop-frontend/static/js/main.09a01bc3.chunk.js",
-    "main.js.map": "/waveshop-frontend/static/js/main.09a01bc3.chunk.js.map",
+    "main.js": "/waveshop-frontend/static/js/main.ed7fa1ca.chunk.js",
+    "main.js.map": "/waveshop-frontend/static/js/main.ed7fa1ca.chunk.js.map",
     "runtime-main.js": "/waveshop-frontend/static/js/runtime-main.a32f00ea.js",
     "runtime-main.js.map": "/waveshop-frontend/static/js/runtime-main.a32f00ea.js.map",
     "static/js/2.c6260b3d.chunk.js": "/waveshop-frontend/static/js/2.c6260b3d.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a32f00ea.js",
     "static/js/2.c6260b3d.chunk.js",
     "static/css/main.ce089041.chunk.css",
-    "static/js/main.09a01bc3.chunk.js"
+    "static/js/main.ed7fa1ca.chunk.js"
   ]
 }
