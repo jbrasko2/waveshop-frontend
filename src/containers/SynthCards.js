@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SynthCard from '../components/SynthCard'
 import SearchBar from '../components/SearchBar'
+import styled from 'styled-components/macro'
 
 class SynthCards extends Component {
     
@@ -9,9 +10,9 @@ class SynthCards extends Component {
         return (
             <>
                 <SearchBar />
-                <div>
+                <Wrapper>
                     {this.props.synths.map(synth => <SynthCard key={synth.id} {...synth} />)}
-                </div>
+                </Wrapper>
             </>
         )
     }
@@ -24,6 +25,12 @@ class SynthCards extends Component {
         )
     }
 }
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`
 
 const mapStateToProps = state => ({
     synths: state.synths.synths,
