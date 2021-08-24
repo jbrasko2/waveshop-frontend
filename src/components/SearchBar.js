@@ -11,7 +11,7 @@ class SearchBar extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.searchSynths(this.state.query)
+        this.props.searchSynths(this.state.query.toLowerCase())
     }
 
     render () {

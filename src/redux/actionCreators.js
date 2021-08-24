@@ -148,7 +148,7 @@ export const searchSynths = query => {
     return dispatch => {
         fetch(API + "/synths")
         .then(res => res.json())
-        .then(data => data.filter(synth => synth.name.includes(query)))
+        .then(data => data.filter(synth => synth.name.toLowerCase().includes(query)))
         .then(synthData => dispatch({
             type: "SEARCH_SYNTHS",
             payload: synthData
